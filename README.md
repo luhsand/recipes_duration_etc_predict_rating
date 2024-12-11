@@ -12,6 +12,8 @@
 This data science project, foces on exploring the relationship of how long it takes to make a recipe and what rating would people give said recipe.
 If duration has an effect on how many people are willing to try the recipe, will cooking duration influence the number of people that rate a recipe?
 
+Okay, so the exposure of the recipe is increased, but how's the rating doing?
+
 ---
 
 ## Introduction
