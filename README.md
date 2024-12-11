@@ -525,6 +525,9 @@ We admit that both in the base and final models was the **missed opportunity** t
   - We had instead relied on eyeballing the ability to generalize by looking at the accuracy of the training set and the accuracy of the test set.
 
 
+## Final Model
+
+
 For the final model, we used 'minutes', 'n_steps', 'calories', 'sugar_(PDV)', 'saturated_fat_(PDV)'] which are two more features than our previous model.
 
 The way I chose my features was calculating the r coefficient score between quantitative columns and 'rating'. 
