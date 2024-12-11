@@ -511,7 +511,7 @@ The features were originally all quantitative until we basically transformed min
 
 The quantitative features were left as is.
 
-Ending Model Features
+Ending Model Features:
   - Quantitative: 2; Ordinal: 1; Nominal: 0
 
 We fit a RandomForestClassifier with an undisclosed set number of n_estimators and random state.
