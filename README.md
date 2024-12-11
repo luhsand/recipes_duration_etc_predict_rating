@@ -323,7 +323,6 @@ Visually they were not greatly different.
 
 Tail of Pivot Table:
 
-print(pivot.tail().to_html())
 
 <table border="1" class="dataframe">
   <thead>
@@ -367,8 +366,13 @@ print(pivot.tail().to_html())
   </tbody>
 </table>
 
+For each average_rating, both quick and long to make recipes closely mirror each other in the proportion of interactions they received compared to to the overall amount. 
+
+The signficance of the minute differences would have to be tested.
 
 However, the sum of number of steps by average rating and sum of saturated fats by average rating for each duration group had a relatively similar shape.
+
+It would be a strech to say there's an association between the two variables dependent on the average rating and duration group, but it's possible.
 
 <iframe
   src="assets/pivot_n_steps_ave_rating.html"
