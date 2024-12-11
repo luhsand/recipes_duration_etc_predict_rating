@@ -557,6 +557,64 @@ We performed optimization on the 'clf__max_depth' hyperparameter because having 
 As for n_estimators, I only tried to manually optimize it between two possible values.
   - Computation time for model fitting is significant, and I was already satisfied with my results.
 
+> Confusion Matrix:
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>35</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>166</td>
+      <td>0</td>
+      <td>6</td>
+      <td>143</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>0</td>
+      <td>590</td>
+      <td>26</td>
+      <td>523</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>10393</td>
+      <td>2916</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>1</td>
+      <td>7</td>
+      <td>471</td>
+      <td>42512</td>
+    </tr>
+  </tbody>
+</table>
+
+
 Our final model definitely improved from our base model.
   -  Accuracy and precision reached over the 0.9 threshold.
   -  Recall had increased by 0.34 but was still just above the 0.6 threshold.
