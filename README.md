@@ -1,6 +1,8 @@
-# Cooking? I'm not good. 
-# Hope It Doesn't Take Too Long. 
-# Better Yet, Nutritious Too.
+# Investigation on the Relationship between Recipe Cooking Duration and Its Rating
+
+## Cooking? I'm not good. 
+## Hope It Doesn't Take Too Long. 
+## Better Yet, Nutritious Too.
 - by Sandy Nguyen
 
 ---
