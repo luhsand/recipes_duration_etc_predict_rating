@@ -273,37 +273,112 @@ and 'is_rating_missing'
 For this analysis, we examined the distribution of minutes in a recipe.
 Many recipes are under 60 minutes to make. However, there exist outliers where it takes many thousands of minutes to make.
 
-&&&&&
+<iframe
+  src="assets/uni_minutes.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
-Since we care about popularity, it would be good to evaluate where or not it is actually infamy.
+Since we care about popularity, it would be good to evaluate where or not it is actually infamous.
 From the Ratings distribution, we can see that it is skewed with many people rating a 5. 
 It is too be noted that stronger emotions are likely associated with a 1 than a 2.
 
-&&&&
+<iframe
+  src="assets/uni_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 Since we care about how long it takes to make the recipe, why not also pay attention to the complexity.
 The distribution of the number of steps, while it doesn't imply difficulty, is nearly bell shaped but is skewed.
 
-&&&&&&&&&
+<iframe
+  src="assets/uni_n_steps.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ### Bivariate Analysis
 
 The scatter plot of interactions vs minutes shows us more bursts of data points that have a higher number of interactions closer to 0 minutes.
 
-&&&&&&
+<iframe
+  src="assets/bi_interactions_minutes.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ### Aggregates
 
 We investigated the relationship between the average rating and the proportion of interactions for both minutes<=30 and minutes>30.
 Visually they were not greatly different.
 
-&&&&&&
+Tail of Pivot Table:
+
+print(pivot.tail().to_html())
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>isduration30</th>
+      <th>0.0</th>
+      <th>1.0</th>
+    </tr>
+    <tr>
+      <th>ave_rating</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4.973684</th>
+      <td>0.000171</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4.977273</th>
+      <td>0.000200</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4.981132</th>
+      <td>0.000247</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4.990783</th>
+      <td>0.000926</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5.000000</th>
+      <td>0.224423</td>
+      <td>0.201823</td>
+    </tr>
+  </tbody>
+</table>
+
 
 However, the sum of number of steps by average rating and sum of saturated fats by average rating for each duration group had a relatively similar shape.
 
-&&&&&&&
+<iframe
+  src="assets/pivot_n_steps_ave_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
-&&&&&&&
+<iframe
+  src="assets/pivot_saturated_fat_ave_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Assessment of Missingness
 
@@ -323,13 +398,23 @@ We are investigating whether the missingness in the 'rating' column depends on t
 
 > Saturated Fat
 
-&&&&&
+<iframe
+  src="assets/missingness_saturated_fat_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 **Null Hypotheisis**: The missingness of ratings does not depend on the saturated fat (PDV) in the recipe.
 **Alternative Hypothesis**: The missingness of ratings does depend on the saturated fat (PDV) in the recipe.
 
-&&&&&
+<iframe
+  src="assets/missing_emperical_saturated_fat_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 We ran a permutation test by shuffling for 500 times, and reject the null hypothesis.
 
@@ -338,13 +423,24 @@ We are investigating whether the missingness in the 'rating' column depends on t
 
 > Minutes
 
-&&&&&&&
+<iframe
+  src="assets/missingness_minutes_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 **Null Hypotheisis**: The missingness of ratings does not depend on the duration of the recipe.
 **Alternative Hypothesis**: The missingness of ratings does depend on the duration of the recipe.
 
-&&&&&&
+
+<iframe
+  src="assets/missing_emperical_minutes_rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 We ran a permutation test by shuffling for 500 times, and fail to reject the null hypothesis.
   - p_value of 0.148 > alpha of 0.01
@@ -370,7 +466,12 @@ The permutation test is useful in evaluating whether two distributions look like
 We propose that **people are more willing to interact with quicker to make recipes** because the shorter the time investment may make people less discouraged to get started in the kitchen.
 This is only an assumption as to a possible reasoning, not a definitely tested one.
 
-&&&&&&&&
+<iframe
+  src="assets/hypothesis_emperical_interactions_isduration30.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 We shuffle the interactions column and simulate 1000 permutations to append each test statistic to the list. 
   - float(np.mean(diff >= obs_stat)): 0.0 # we reject the null hypothesis
@@ -482,7 +583,12 @@ Group Y: 'stars' from our clf model of acutal and predicted rating
 
 **Significance Level**: 0.01
 
-&&&&&
+<iframe
+  src="assets/fairness_emperical_precision_saturated_fat_ok.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 Running a permutation test of 500 simulations, we fail to reject the null hypothesis at a p_value of 0.968.
   - Indicating that our model is likely fair and achieved precision parity regarding saturated fats with the above manipulations.
