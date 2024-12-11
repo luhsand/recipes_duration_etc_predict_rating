@@ -524,7 +524,6 @@ Being that both our training and testing accuracy were under 0.8 and a low F1 sc
 We admit that both in the base and final models was the **missed opportunity** to use k-fold cross validation to estimate the models' ability to generalize.
   - We had instead relied on eyeballing the ability to generalize by looking at the accuracy of the training set and the accuracy of the test set.
 
-##
 
 For the final model, we used 'minutes', 'n_steps', 'calories', 'sugar_(PDV)', 'saturated_fat_(PDV)'] which are two more features than our previous model.
 
